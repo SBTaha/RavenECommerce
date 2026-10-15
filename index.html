@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="Explore RAVEN Guitars, a dark-themed fictional guitar shop with a curated selection of electric guitars, acoustics, basses, amplifiers, and pedals."
+    />
+    <meta name="theme-color" content="#111111" />
+    <style>
+      :root {
+        color-scheme: light;
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      html {
+        scroll-padding-top: env(safe-area-inset-top, 0px);
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font:
+          14px -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        background: #fff;
+        color: #000;
+      }
+      img {
+        max-width: 100%;
+      }
+      [hidden]:not([hidden="until-found" i]) {
+        display: none !important;
+      }
+    </style>
+    <title>RAVEN Guitars — Instruments for the Unusual</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap"
+    />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div id="app">
+      <header class="site-header">
+        <div class="container header-bar">
+          <a class="brand" href="#/" aria-label="RAVEN, home">
+            <svg
+              class="brand__mark"
+              viewBox="0 0 30 30"
+              aria-hidden="true"
+              focusable="false"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.4"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M15 2.6c6.6 0 11.4 3.9 11.4 8.8 0 6-7 15.6-11.4 16.6C10.6 27 3.6 17.4 3.6 11.4c0-4.9 4.8-8.8 11.4-8.8Z"
+                stroke="var(--blood-400)"
+              />
+              <path
+                d="M15 7.5v13M11.4 8.6v10.8M18.6 8.6v10.8"
+                stroke="currentColor"
+                stroke-width="0.9"
+                opacity="0.65"
+              />
+            </svg>
+            <span class="brand__word"
+              >RAVEN<span class="brand__sub">GUITARS</span></span
+            >
+          </a>
+
+          <nav class="nav" aria-label="Main">
+            <a class="nav__link" data-nav href="#/shop">Shop</a>
+            <a class="nav__link" data-nav href="#/story">The story</a>
+            <a class="nav__link" data-nav href="#/contact">Contact</a>
+          </nav>
+
+          <div class="header-tools">
+            <button
+              type="button"
+              class="icon-btn"
+              data-action="open-search"
+              aria-label="Search instruments"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+                stroke-linecap="round"
+              >
+                <circle cx="11" cy="11" r="7" />
+                <path d="m20 20-3.6-3.6" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              class="icon-btn"
+              id="cart-button"
+              data-action="open-cart"
+              aria-label="Open cart, empty"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="9" cy="20" r="1.4" />
+                <circle cx="18" cy="20" r="1.4" />
+                <path
+                  d="M2 3h3l2.6 12.2a1.6 1.6 0 0 0 1.6 1.3h8.5a1.6 1.6 0 0 0 1.6-1.3L21.5 7H6"
+                />
+              </svg>
+              <span class="cart-count" id="cart-count" hidden>0</span>
+            </button>
+            <button
+              type="button"
+              class="icon-btn nav-toggle"
+              id="nav-toggle"
+              data-action="nav-toggle"
+              aria-expanded="false"
+              aria-controls="mobile-nav"
+              aria-label="Menu"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+                stroke-linecap="round"
+              >
+                <path d="M3 6h18M3 12h18M3 18h18" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <nav
+          class="mobile-nav"
+          id="mobile-nav"
+          aria-label="Main, compact"
+          hidden
+        >
+          <ul>
+            <li><a data-nav href="#/shop">Shop the floor</a></li>
+            <li><a data-nav href="#/story">The story</a></li>
+            <li><a data-nav href="#/contact">Contact</a></li>
+            <li><a data-nav href="#/cart">Cart</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main id="main">
+        <div id="view"></div>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-grid">
+          <div class="footer-col">
+            <h3>Shop</h3>
+            <ul>
+              <li><a href="#/shop?cat=electric">Electric</a></li>
+              <li><a href="#/shop?cat=acoustic">Acoustic</a></li>
+              <li><a href="#/shop?cat=bass">Bass</a></li>
+              <li><a href="#/shop?cat=amps">Amplifiers</a></li>
+              <li><a href="#/shop?cat=pedals">Pedals</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>The bench</h3>
+            <ul>
+              <li><a href="#/story">Setup standard</a></li>
+              <li><a href="#/story">Repairs and fret work</a></li>
+              <li><a href="#/contact">Trade-in valuation</a></li>
+              <li><a href="#/contact">Shipping and returns</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Visit</h3>
+            <ul>
+              <li>Somewhere in the dark forest</li>
+              <li>Near the dead pond</li>
+              <li>Tue–Sat, 11am – 7pm</li>
+              <li class="mono" style="user-select: all">+6 666 666 6666</li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>The slow list</h3>
+            <p
+              style="
+                font-size: 0.84rem;
+                color: var(--silver-400);
+                margin-bottom: 0.9rem;
+              "
+            >
+              One email a month, sent the day new instruments go on the wall.
+            </p>
+            <form
+              id="newsletter-form"
+              novalidate
+              style="display: grid; gap: 0.6rem"
+            >
+              <div class="field">
+                <label for="news-email">Email address</label>
+                <input
+                  id="news-email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="you@example.com"
+                />
+              </div>
+              <button type="submit" class="btn btn--ghost btn--sm">
+                Join the list
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="container footer-note">
+          <p>
+            RAVEN is a fictional retailer. Designed and built as a portfolio
+            piece for GHOST LIGHT, 2026.
+          </p>
+          <p>All instruments photographed in the shop before listing.</p>
+        </div>
+      </footer>
+    </div>
+
+    <div id="overlay-root" hidden></div>
+    <div id="toast-host"></div>
+    <div
+      id="live-region"
+      class="sr-only"
+      role="status"
+      aria-live="polite"
+    ></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/images.js"></script>
+    <script src="js/art.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/views.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

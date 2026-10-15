@@ -1,0 +1,60 @@
+:root {
+  color-scheme: dark;
+
+  --ink-900: #08080a;
+  --ink-800: #0c0c0f;
+  --ink-700: #111115;
+  --ink-600: #17171c;
+  --ink-500: #1f1f26;
+
+  --silver-100: #f0ece4;
+  --silver-200: #d6d1c7;
+  --silver-300: #ada79c;
+  --silver-400: #837e75;
+  --silver-500: #5f5a53;
+
+  --blood-700: #4e101c;
+  --blood-600: #6a1826;
+  --blood-500: #8a2234;
+  --blood-400: #a83347;
+  --blood-300: #c9596a;
+
+  --ember-500: #c98a4b;
+  --ember-400: #dfa767;
+  --ember-200: #f0d3a8;
+
+  --line: rgba(214, 208, 196, 0.13);
+  --line-strong: rgba(214, 208, 196, 0.26);
+  --ok: #6e9b6b;
+  --warn: #c98a4b;
+  --low: #c9596a;
+
+  --font-display: "Bodoni Moda", "Didot", "Playfair Display", Georgia, serif;
+  --font-sans:
+    "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica,
+    Arial, sans-serif;
+  --font-mono:
+    "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --step--1: clamp(0.78rem, 0.76rem + 0.1vw, 0.84rem);
+  --step-0: clamp(0.94rem, 0.91rem + 0.15vw, 1rem);
+  --step-1: clamp(1.1rem, 1.04rem + 0.3vw, 1.3rem);
+  --step-2: clamp(1.35rem, 1.2rem + 0.7vw, 1.8rem);
+  --step-3: clamp(1.8rem, 1.45rem + 1.6vw, 2.8rem);
+  --step-4: clamp(2.4rem, 1.6rem + 3.6vw, 5rem);
+  --step-5: clamp(3rem, 1.6rem + 6vw, 7.5rem);
+
+  --gutter: clamp(1rem, 0.6rem + 2vw, 2.5rem);
+  --max: 1280px;
+  --radius: 2px;
+  --radius-lg: 4px;
+  --shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.9);
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur: 260ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur: 1ms;
+  }
+}
